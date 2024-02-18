@@ -15,8 +15,20 @@
 
 <form>
 <p> Give me two numbers.</p>
-<input type="numbers" name="number-one" id="num-one" size="10">
-<input type="numbers" name="number-two" id="num-two" size="10">
+<input type="numbers" name="number-one" id="num-one" size="10" required>
+<input type="numbers" name="number-two" id="num-two" size="10" required>
+</p>
+
+<p>
+<input type="button" name="submit" value="Addition" onclick="addition()" size="10">
+<input type="button" name="submit" value="Subtraction" onclick="subtraction()" size="10">
+<input type="button" name="submit" value="Multiplication" onclick="multiplication()" size="10">
+<input type="button" name="submit" value="Division" onclick="division()" size="10">
+<input type="button" name="submit" value="Root" onclick="root()" size="10">
+<input type="button" name="submit" value="Modulo" onclick="modulo()" size="10">
+</p>
+
+
 
 </form>
 
