@@ -20,15 +20,33 @@
 </p>
 
 <p>
-<input type="button" name="submit" value="Addition" onclick="addition()" size="10">
-<input type="button" name="submit" value="Subtraction" onclick="subtraction()" size="10">
-<input type="button" name="submit" value="Multiplication" onclick="multiplication()" size="10">
-<input type="button" name="submit" value="Division" onclick="division()" size="10">
-<input type="button" name="submit" value="Root" onclick="root()" size="10">
-<input type="button" name="submit" value="Modulo" onclick="modulo()" size="10">
+<input type="button" name="add" value="Addition" onclick="addition()" size="10"> 
+
+<input type="button" name="subtract" value="Subtraction" onclick="subtraction()" size="10">
+
+<input type="button" name="multiply" value="Multiplication" onclick="multiplication()" size="10">
+
+<input type="button" name="divide" value="Division" onclick="division()" size="10">
+
+<input type="button" name="calcModulo" value="Modulo" onclick="modulo()" size="10">
+
 </p>
 
 <p id="output"> </p>
+</form>
+
+<form>
+
+
+<h2> Want the root of a number? </h2>
+<p>
+<input type="numbers" name="rootNumber" id="rootNum" size="10" required>
+</p>
+<p>
+<input type="button" name="calcRoot" value="Root" onclick="root()" size="10">
+</p>
+<br>
+<p id="rootOutput"> </p>
 
 </form>
 
@@ -37,4 +55,8 @@
 
 
 <a href="https://bew89.github.io/tool/">Github website</a>
-<script src="../bew89.github.io/tool/arithmetic/arithmetic.js"> </script>
+
+<script src="../arithmetic/arithmetic.js"> </script>
+
+</body>
+</html>
