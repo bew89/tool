@@ -11,10 +11,10 @@ operator();
 
 out();
 
-function out(){
+function out(operator, result){
 
-document.getElementById("output".innerText = 
-firstNumber	+ " " + operator + " " + secondNumber + " = " + result;
+document.getElementById("output").innerText = 
+`${firstNumber} ${operator} ${secondNumber} = ${result}`;
 	
 }	
 
@@ -31,7 +31,7 @@ function addition(){
 	
 let operator = "+";
 let result = (firstNumber + secondNumber);	
-	
+	out(operator,result);
 }
 
 function subtraction(){
