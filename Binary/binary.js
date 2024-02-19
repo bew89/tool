@@ -1,8 +1,30 @@
 //if ones complemetn is ticked then do stuff
 //if twors is ticked do stuff
 
+function checkIfTicked(){
+if(Checkbox.checked){
+	
+	if(Checkbox.id === 'onesComp'){
+		return "ones";
+		
+	}else if(Checkbox.id === 'twosComp'){
+		return "twos";
+		
+	}else {
+		return 0;
+	
+	
+	
+}
+}
 
 
+
+
+
+
+
+-------------------------------------------------------------------------------------
 
 function decimalToBinary(){
 	
@@ -11,6 +33,9 @@ let userText = parseFloat(document.getElementById("decimalText").value);
 if(isNaN(userText)){
 return alert("Enter a number. Text will not work");	
 }
+
+
+
 
 let binaryText = userText.toString(2);
 let padding = getPadding(binaryText);
@@ -24,6 +49,8 @@ document.getElementById("binaryOutput").innerText = binary;
 
 }
 
+-------------------------------------------------------------------------------------
+
 function binaryToDecimal(){
 	
 	let userInput = parseFloat(document.getElementById("binaryText").value);
@@ -32,10 +59,15 @@ if(isNaN(userInput)){
 return alert("Enter a number. Text will not work");	
 }
 
+let sign = checkIfTicked();
+
 let decimalText = parseInt(userInput,2);
 
 document.getElementById("decimalOutput").innerText = decimalText;
 }
+
+-------------------------------------------------------------------------------------
+
 
 function getPadding(binaryText){
 	
