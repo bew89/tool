@@ -69,3 +69,22 @@
 	display:none;
 	
 }
+
+.setButtonSize {
+
+	width: 150px;
+	height: 60px;
+	
+}
+
+@media screen and (max-width: 600px){
+	
+	.setButtonSize {
+	width: 200px;
+	height: 40px;
+	
+}
+	
+	
+	
+}
