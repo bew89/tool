@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<link rel="stylesheet" href="../idlegame/idlegame.css">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+
+<title> Lil Game </title>
+
+</head>
+
+<body>
+<h1> Lil game </h1>
+ <div class="grid-container">
+<form>
+<header id="headingSection">
+<div id="theBar">
+<div id="theProgress"></div>
+</div>
+
+</header>
+
+
+<main id="mainSection">
+<br>
+<input type="button" name="increase" value="Collect Stardust" onclick="barIncrease()" size="15">
+
+<br>
+
+</main>
+
+<div id="upgradeSection">
+<p id="notEnoughStardust"></p>
+<input id="upgradeCollecting" type="button" name="upgradeCollecting" value="Upgrade Colletion" onclick="upgradeCollection()" size="15">
+<p id="collectionUpgradeInfo">Every upgrade will increase your Stardust Collection amount by 1. </p>
+
+
+</div>
+<div id="itemSection">
+<p id="stardustAmount"></p>
+<p id="starshardAmount"></p>
+</div>
+</form>
+</div>
+<script src="../idlegame/idlegame.js"> </script>
+
+
+</body>
+</html>

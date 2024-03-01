@@ -1,0 +1,71 @@
+
+
+#theBar {
+	background-color: gray;
+	width: 100%;
+	
+}
+
+#theProgress {
+	
+	background-color: green;
+	width: 1%;
+	height: 50px;
+	
+}
+
+
+#headingSection {
+    grid-area: heading;
+}
+
+#upgradeSection {
+    grid-area: upgrades;
+}
+
+#mainSection {
+    grid-area: mainText;
+}
+#itemSection {
+	grid-area: items;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-areas:
+	'heading heading heading'
+	'mainText mainText upgrades'
+	'items items items';
+
+}
+.grid-container form {
+    display: contents;
+}
+
+#headingSection {
+	
+}
+
+#upgradeSection {
+	text-align: right;
+}
+
+#mainSection {
+	text-align: left;
+}
+#itemSection {
+	text-align: bottom;
+}
+
+
+#upgradeCollecting:hover ~ #collectionUpgradeInfo {
+	
+	display: block;
+	color: black;
+}
+	
+#collectionUpgradeInfo {
+	display:none;
+	
+}
