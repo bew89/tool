@@ -1,7 +1,23 @@
 /*This is for the index page*/
 
 body{
-	
-	background: black;
-	color: white;
+	font-size: 30px;
+	background: white;
+	color: black;
 }
+
+#navigationSection a {
+	font-size: 30px;
+	}
+	
+.arithmeticButtons {
+	width: 100px;
+	height: 100px;
+	
+}
+@media screen and (max-width: 600px){
+   #navigationSection a {
+		 font-size: 50px;
+	}
+}
+	

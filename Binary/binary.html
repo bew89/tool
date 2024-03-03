@@ -2,31 +2,24 @@
 <html lang="en">
 <head>
 
-<link rel="stylesheet" href="../Users/benwo/github/bew89.github.io/index.css">
+<link rel="stylesheet" href="../binary/binary.css"">
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
 <title> Binary </title>
 
 </head>
 <body>
 
 <form>
-<p> One's complement 
-<input type="checkbox" name="ones" id="onesComp" size="20">
-</p>
-<p> Two's complement
-<input type="checkbox" name="twos" id="twosComp" size="20">
-</p>
-
-<p> hey</p>
 
 <h1> To Binary </h1>
 
 
 <p> Enter a Decimal number </p>
-<input type="numbers" name="decimal" id="decimalText" size="30">
+<input type="numbers" name="decimal" id="decimalText" size="30" class="numberButtons">
 <input type="button" name="convertDecimal" value="Convert" onclick="decimalToBinary()" size="20">
 
 <p id="defaultBinaryOutput"> </p>
@@ -40,7 +33,7 @@
 <h2> To Decimal </h2>
 
 <p> Enter a Binary Number </p>
-<input type="numbers" name="binary" id="binaryText" size="30">
+<input type="numbers" name="binary" id="binaryText" size="30" class="numberButtons">
 <input type="button" name="convertBinary" value="Convert" onclick="binaryToDecimal()" size="20">
 
 
@@ -50,7 +43,7 @@
 
 <h3> IEEE 754 Decimal Conversion </h3>
 <p> Enter a Decimal Number </p>
-<input type="numbers" name="ieee" id="ieeeText" size="30">
+<input type="numbers" name="ieee" id="ieeeText" size="30" class="numberButtons">
 <input type="button" name="convertIeee" value="Convert" onclick="IEEEConverter()" size="20">
 
 <p id="iee754Output"> </p>

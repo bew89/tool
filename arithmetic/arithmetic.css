@@ -1,0 +1,26 @@
+
+
+.numberButtons{
+	border: solid;
+}
+.arithmeticButtons {
+	width: 100px;
+	height: 50px;
+	
+}
+@media screen and (max-width: 600px){
+   #navigationSection a {
+		 font-size: 50px;
+	}
+	.numberButtons {
+		width: 100px;
+		height: 25px;
+}
+
+body, h1  {
+	text-align: center;
+}
+body { 
+font-size: 20px;
+}
+	

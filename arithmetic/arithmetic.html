@@ -2,11 +2,13 @@
 <html lang="en">
 <head>
 
-<link rel="stylesheet" href="../Users/benwo/github/bew89.github.io/index.css">
+<link rel="stylesheet" href="../arithmetic/arithmetic.css">
+
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	
 <title> Artithmetics </title>
 
 </head>
@@ -16,20 +18,20 @@
 
 <form>
 <p> Give me two numbers.</p>
-<input type="numbers" name="numberOne" id="numOne" size="10" required>
-<input type="numbers" name="numberTwo" id="numTwo" size="10" required>
+<input type="numbers" name="numberOne" id="numOne" size="10" class="numberButtons" required >
+<input type="numbers" name="numberTwo" id="numTwo" size="10"  class="numberButtons" required>
 </p>
 
 <p>
-<input type="button" name="add" value="Addition" onclick="addition()" size="10"> 
+<input type="button" name="add" value="Addition" onclick="addition()" size="10" class="arithmeticButtons"> 
 
-<input type="button" name="subtract" value="Subtraction" onclick="subtraction()" size="10">
+<input type="button" name="subtract" value="Subtraction" onclick="subtraction()" size="10" class="arithmeticButtons">
 
-<input type="button" name="multiply" value="Multiplication" onclick="multiplication()" size="10">
+<input type="button" name="multiply" value="Multiplication" onclick="multiplication()" size="10" class="arithmeticButtons">
 
-<input type="button" name="divide" value="Division" onclick="division()" size="10">
+<input type="button" name="divide" value="Division" onclick="division()" size="10" class="arithmeticButtons">
 
-<input type="button" name="calcModulo" value="Modulo" onclick="modulo()" size="10">
+<input type="button" name="calcModulo" value="Modulo" onclick="modulo()" size="10" class="arithmeticButtons">
 
 </p>
 
@@ -38,10 +40,10 @@
 
 <h2> Want the root of a number? </h2>
 <p>
-<input type="numbers" name="rootNumber" id="rootNum" size="10" required>
+<input type="numbers" name="rootNumber" id="rootNum" size="10" class="numberButtons"  required>
 </p>
 <p>
-<input type="button" name="calcRoot" value="Root" onclick="root()" size="10">
+<input type="button" name="calcRoot" value="Root" onclick="root()" size="10" class="arithmeticButtons">
 </p>
 <br>
 <p id="rootOutput"> </p>
