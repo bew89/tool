@@ -1,90 +1,213 @@
 
+body{
+  height: 100%;
+  margin: 0;
+background-color:#4a4e57;
+}
+.mainDisplaySection h1 {
+font-size: 20px;	
+}
+.mainDisplaySection h2, h3, h4{
+font-size: 25px;
+}
 
-#theBar {
-	background-color: gray;
-	width: 100%;
+.mainDisplaySection #itemSection, #collectSection, #upgradeSection{
+	background-color: #898f9c;
+	border: solid;
+	border-radius: 15px;
 	
+	padding: 10px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	width: 300px;
+	height: 400px;
+}
+#theBar {
+	background-color: #626773;
+	width: 80%;
+	height: 35px;
+	margin: 0 auto;
 }
 
 #theProgress {
-	
 	background-color: green;
-	width: 1%;
-	height: 50px;
+	width: 0%;
+	height: 35px;
+}
+
+#barSection {
+	grid-area: bar;
+	
+}
+#navSection {
+	
+	grid-area: nav;
+	width: 100px;
+	height: 400px;
+	text-align: center;
+	
+	background-color: #898f9c;
+	border: solid;
+	border-radius: 15px;
+	
+	padding: 10px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	
+}
+
+.mainDisplaySection #itemSection {
+	grid-area: item;
+
+	
+}
+
+.mainDisplaySection #collectSection {
+	grid-area: collect;
+	
+}
+
+.mainDisplaySection #upgradeSection {
+	grid-area: upgrade;
+	
+}
+.mainDisplaySection .grid-container {
+	display: grid;
+	grid-template-areas:
+	'bar bar bar bar'
+	'nav item collect upgrade';
+	gap: 10px;
+	padding: 10px;
 	
 }
 
 
-#headingSection {
-    grid-area: heading;
-}
-
-#upgradeSection {
-    grid-area: upgrades;
-}
-
-#mainSection {
-    grid-area: mainText;
-}
-#itemSection {
-	grid-area: items;
-}
-
-.grid-container {
-
-    display: grid;
-    grid-template-areas:
-	'heading heading heading'
-	'mainText mainText upgrades'
-	'items items items';
-
-}
 .grid-container form {
     display: contents;
-}
-
-#headingSection {
 	
 }
-
-#upgradeSection {
-	text-align: right;
-}
-
-#mainSection {
-	text-align: left;
-}
-#itemSection {
-	text-align: bottom;
-}
-
-
-#upgradeCollecting:hover ~ #collectionUpgradeInfo {
-	
-	display: block;
-	color: black;
-}
-	
-#collectionUpgradeInfo {
-	display:none;
-	
-}
-
 .setButtonSize {
 
-	width: 150px;
-	height: 60px;
+border-radius: 15px;
+	width: 210px;
+	height: 20px;
+	
+ background-color: #d3d3d3; /* Neutral gray color */
+  color: #000;
+
+}
+.navSectionButtonSize{
+	border-radius: 15px;
+	width: 100px;
+	height: 20px;
+	
+	 background-color: #d3d3d3; /* Neutral gray color */
+  color: #000;
+}
+
+/*--------------------------------------------------------------------------*/
+
+.planetDisplaySection h1 {
+font-size: 20px;	
+}
+.planetDisplaySection h2, h3, h4, h5{
+font-size: 25px;
+}
+
+.planetDisplaySection #itemSection, #planetSection, #upgradeSection{
+	background-color: #898f9c;
+	border: solid;
+	border-radius: 15px;
+	
+	padding: 10px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+	width: 300px;
+	height: 400px;
+}
+
+
+.planetDisplaySection #planetSection {
+	grid-area: planet;
+	
+}
+.planetDisplaySection #itemSection {
+	grid-area: item;
+	
+}
+.planetDisplaySection #upgradeSection {
+	grid-area: upgrade;
+	
+}
+.planetDisplaySection .grid-container {
+	display: grid;
+	grid-template-areas:
+	'bar bar bar bar'
+	'nav planet item upgrade';
+	gap: 10px;
+	padding: 10px;
 	
 }
 
-@media screen and (max-width: 600px){
+/*-------------------------------------------------------------------------*/
+
+
+.galaxyDisplaySection h1 {
+font-size: 20px;	
+}
+.galaxyDisplaySection h2, h3, h4, h5, h6, h7{
+font-size: 25px;
+}
+
+.galaxyDisplaySection #galaxySection, #boxSection{
+	background-color: #898f9c;
+	border: solid;
+	border-radius: 15px;
 	
+	padding: 10px;
+	max-width: 100%;
+	max-height: 100%;
+	overflow: hidden;
+
+}
+
+.galaxyDisplaySection #galaxySection {
+	grid-area: galaxy;
+	width: 600px;
+	height: 400px;
+}
+.galaxyDisplaySection #boxSection {
+	grid-area: box;
+	width: 300px;
+	height: 400px;
+}
+.galaxyDisplaySection .grid-container {
+	display: grid;
+	grid-template-areas:
+	'bar bar bar bar'
+	'nav galaxy galaxy box';
+	gap: 10px;
+	padding: 10px;
+	
+}
+
+/*----------------------------------------------------------------------------*/
+
+
+
+
+@media screen and (max-width: 600px){
+	/*
 	.setButtonSize {
 	width: 200px;
-	height: 40px;
-	
+	height: 50px;
+	*/
 }
 	
 	
 	
 }
+

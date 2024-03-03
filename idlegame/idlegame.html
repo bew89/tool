@@ -12,36 +12,110 @@
 </head>
 
 <body>
-<h1> Lil game </h1>
+<div class="mainDisplaySection">
  <div class="grid-container">
 <form>
-<header id="headingSection">
+
+<div id="barSection">
 <div id="theBar">
 <div id="theProgress"></div>
 </div>
 <p id="notEnoughStardust"></p>
-</header>
-
-
-<main id="mainSection">
-<br>
-<input type="button" name="increase" value="Collect Stardust" onclick="barIncrease()" class="setButtonSize">
-
-</main>
-
-<div id="upgradeSection">
-<br>
-<input id="upgradeCollecting" type="button" name="upgradeCollecting" value="Upgrade Collection" onclick="upgradeCollection()" class="setButtonSize">
-<p id="collectionUpgradeInfo">Every upgrade will increase your Stardust Collection amount by 1. </p>
-
-
 </div>
+
+
+<div id="navSection">
+<h1> Navigation </h1>
+<input type="button" name="button1" value="button1" onclick="showMainSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button2" value="Planet View" onclick="showPlanetSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button3" value="Galaxy View" onclick="showGalaxySection()" class="navSectionButtonSize">
+</div>
+
 <div id="itemSection">
+<h2>Your Items</h2>
 <p id="stardustAmount"></p>
 <p id="starshardAmount"></p>
 </div>
+
+<div id="collectSection">
+<h3>Collect Resources</h3>
+<input type="button" name="increase" value="Collect Stardust" onclick="barIncrease()" class="setButtonSize">
+</div>
+
+<div id="upgradeSection">
+<h4>Available Upgrades </h4>
+<input id="upgradeCollecting" type="button" name="upgradeCollecting" value="Upgrade Stardust Collection" onclick="upgradeStardustGain()" class="setButtonSize">
+<br><br>
+<input id="upgradeAutoStardust" type="button" name="upgradeAutoStardust" value="Upgrade Auto Stardust Collection" onclick="autoUpgrade()" class="setButtonSize">
+</div>
+
 </form>
 </div>
+</div>
+
+<div class="planetDisplaySection">
+<div class="grid-container">
+
+<div id="barSection">
+<div id="theBar">
+<div id="theProgress"></div>
+</div>
+<p id="notEnoughStardust"></p>
+</div>
+
+<div id="navSection">
+<h1> Navigation </h1>
+<input type="button" name="button1" value="button1" onclick="showMainSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button2" value="Planet View" onclick="showPlanetSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button3" value="Galaxy View" onclick="showGalaxySection()" class="navSectionButtonSize">
+</div>
+
+<div id="planetSection">
+<h5>Current Planet </h5>
+</div>
+<div id="itemSection">
+<h2>Your Items</h2>
+<p id="stardustAmount"></p>
+<p id="starshardAmount"></p>
+</div>
+<div id="upgradeSection">
+<h4>Available Upgrades </h4>
+</div>
+
+</div>
+</div>
+
+<div class="galaxyDisplaySection">
+<div class="grid-container">
+
+<div id="barSection">
+<div id="theBar">
+<div id="theProgress"></div>
+</div>
+<p id="notEnoughStardust"></p>
+</div>
+
+<div id="navSection">
+<h1> Navigation </h1>
+<input type="button" name="button1" value="button1" onclick="showMainSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button2" value="Planet View" onclick="showPlanetSection()" class="navSectionButtonSize">
+<br><br>
+<input type="button" name="button3" value="Galaxy View" onclick="showGalaxySection()" class="navSectionButtonSize">
+</div>
+
+<div id="galaxySection">
+<h6> Galaxy View </h6>
+</div>
+<div id="boxSection">
+<h7> [........] </h7>
+</div>
+
+
 <script src="../idlegame/idlegame.js"> </script>
 
 
