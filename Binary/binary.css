@@ -8,13 +8,15 @@
 	height: 50px;
 	
 }
-@media screen and (max-width: 600px){
-   #navigationSection a {
-		 font-size: 50px;
+@media screen and (max-width: 600px) {
+	#navigationSection a {
+		font-size: 50px;
 	}
+
 	.numberButtons {
 		width: 100px;
 		height: 25px;
+	}
 }
 
 body, h1  {

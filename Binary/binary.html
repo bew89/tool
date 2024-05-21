@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 
-<link rel="stylesheet" href="../binary/binary.css"">
+<link rel="stylesheet" href="binary.css">
 
 
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
@@ -14,36 +14,31 @@
 <body>
 
 <form>
-
 <h1> To Binary </h1>
-
-
 <p> Enter a Decimal number </p>
-<input type="numbers" name="decimal" id="decimalText" size="30" class="numberButtons">
+<input type="number" name="decimal" id="decimalText" size="30" class="numberButtons">
 <input type="button" name="convertDecimal" value="Convert" onclick="decimalToBinary()" size="20">
 
-<p id="defaultBinaryOutput"> </p>
-<p id="signedBinaryOutput"> </p>
-<p id="onesCompBinaryOutput"> </p>
-<p id="twosCompBinaryOutput"> </p>
+<p id="defaultBinaryOutput">Standard Binary Representation:</p>
+<p id="signedBinaryOutput">Signed Binary Representation:</p>
+<p id="onesCompBinaryOutput">Ones Complement Binary Representation:</p>
+<p id="twosCompBinaryOutput">Twos Complement Binary Representation:</p>
 
-
+</form>
 <br>
-
+<form>
 <h2> To Decimal </h2>
-
 <p> Enter a Binary Number </p>
-<input type="numbers" name="binary" id="binaryText" size="30" class="numberButtons">
+<input type="number" name="binary" id="binaryText" size="30" class="numberButtons">
 <input type="button" name="convertBinary" value="Convert" onclick="binaryToDecimal()" size="20">
-
-
 <p id="defaultDecimalOutput"> </p>
 
+</form>
 <br>
-
+<form>
 <h3> IEEE 754 Decimal Conversion </h3>
 <p> Enter a Decimal Number </p>
-<input type="numbers" name="ieee" id="ieeeText" size="30" class="numberButtons">
+<input type="number" name="ieee" id="ieeeText" size="30" class="numberButtons">
 <input type="button" name="convertIeee" value="Convert" onclick="IEEEConverter()" size="20">
 
 <p id="iee754Output"> </p>
@@ -51,6 +46,6 @@
 </form>
 
 <a href="https://bew89.github.io/tool/">Github website</a>
-<script src="../Binary/binary.js"> </script>
+<script src="binary.js"> </script>
 </body>
 </html>
