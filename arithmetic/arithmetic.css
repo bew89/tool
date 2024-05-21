@@ -1,26 +1,73 @@
 
-
-.numberButtons{
-	border: solid;
+.grid-container {
+    background-color: #556B2F;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+	'arithmetics roots'
+    'arithmetics roots';
 }
+
+#arithmetic {
+    grid-area: arithmetics;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+#root {
+    grid-area: roots;
+    border-color: black;
+    border-width: 2px;
+    border-style: solid;
+}
+
+.numberButtons {
+    border: solid;
+}
+
 .arithmeticButtons {
-	width: 100px;
-	height: 50px;
-	
-}
-@media screen and (max-width: 600px){
-   #navigationSection a {
-		 font-size: 50px;
-	}
-	.numberButtons {
-		width: 100px;
-		height: 25px;
+    width: 100px;
+    height: 35px;
+
 }
 
-body, h1  {
-	text-align: center;
+@media screen and (max-width: 600px) {
+    .grid-container {
+        background-color: #556B2F;
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 1fr 1fr;
+        grid-template-areas:
+	'arithmetics'
+    'roots';
+    }
+
+    #arithmetic {
+        grid-area: arithmetics;
+    }
+
+    #root {
+        grid-area: roots;
+    }
+
+    .numberButtons {
+        width: 100px;
+        height: 20px;
+    }
+    .arithmeticButtons {
+        width: 90px;
+        height: 25px;
+border-radius: 7px;
+    }
 }
-body { 
-font-size: 20px;
+
+body, h1 {
+    text-align: center;
 }
-	
+
+body {
+    background-color: saddlebrown;
+    font-size: 25px;
+    font-family: 'Consolas', monospace;
+}
