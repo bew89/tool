@@ -1,5 +1,27 @@
+.grid-container {
+	display: grid;
+	grid-template-areas:
+	'decToBin binToDec decToIEEE'
+		'decToBin binToDec decToIEEE';
+	position: fixed;
+	width: 100%;
+	min-width: 100%;
+	height: 100vh;
 
+}
+#decToBin{
+	grid-area: decToBin;
+	background-color: lightgray;
 
+}
+#binToDec{
+	grid-area: binToDec;
+	background-color: lightcoral;
+}
+#decToIEEE{
+	grid-area: decToIEEE;
+	background-color: lightgreen;
+}
 .numberButtons{
 	border: solid;
 }
@@ -18,12 +40,13 @@
 		height: 25px;
 	}
 }
-
-body, h1  {
+h1 {
+	font-size: 30px;
+}
+body, h1,h2,h3 {
 	text-align: center;
 }
-body { 
-
+body {
 font-size: 20px;
 
 }

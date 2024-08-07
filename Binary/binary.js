@@ -128,20 +128,22 @@ function twosCompToBinary() {
 
 //-----------------------------------------------------------------------------------
 
+document.getElementById('binaryText').addEventListener('input', function (ev) {
+    binaryToDecimal()
+
+});
 
 function binaryToDecimal() {
 
     let userInput = parseFloat(document.getElementById("binaryText").value);
 
     if (isNaN(userInput)) {
-        return alert("Enter a number. Text will not work");
+        document.getElementById("defaultDecimalOutput").innerText = `Enter a number.
+         Text will not work`;
+
+    } else {
+        document.getElementById("defaultDecimalOutput").innerText = parseInt(userInput, 2);
     }
-
-    let sign = checkIfTicked();
-
-    let decimalText = parseInt(userInput, 2);
-
-    document.getElementById("defaultDecimalOutput").innerText = decimalText;
 }
 
 //-----------------------------------------------------------------------------------
@@ -171,6 +173,10 @@ function getPadding(binaryText) {
     }
 }
 
+document.getElementById('ieeeText').addEventListener('input', function (ev) {
+    IEEEConverter();
+
+});
 
 function IEEEConverter() {
 
@@ -178,79 +184,81 @@ function IEEEConverter() {
 
     //Check if a number
     if (isNaN(userInput)) {
-        return alert("Enter a number. Text will not work");
-    }
-
-    //Get sign bit
-    let signBit = "";
-    if (userInput < 0) {
-        signBit = "1";
+        document.getElementById("iee754Output").innerText = `Enter a number
+        Text will not work`;
     } else {
-        signBit = "0";
+
+        //Get sign bit
+        let signBit = "";
+        if (userInput < 0) {
+            signBit = "1";
+        } else {
+            signBit = "0";
+        }
+
+        let userInputString = userInput.toString();
+        console.log("USER ENTERED: " + userInput + " " + userInputString);
+
+        if (!userInputString.includes('.')) {
+            userInput += ".0";
+            userInputString += ".0";
+            console.log("check if '.0 ' = " + userInput + " " + userInputString);
+        }
+
+
+        let decimalPoint = userInputString.indexOf('.');
+        let length = userInputString.length;
+
+        let integer = userInputString.slice(0, decimalPoint);
+        let fraction = userInputString.slice(decimalPoint);
+        console.log("The integer is: " + integer + " The fraction is: " + fraction);
+        fraction = "0" + fraction;
+        let mantissa = fractionToBinary(fraction);
+        integer = parseFloat(integer);
+        fraction = parseFloat(fraction);
+        console.log("The integer is: " + integer + " The fraction is: " + fraction);
+
+        let integerInBinary = integer.toString(2);
+        let rightSideOfInteger = integerInBinary.slice(1);
+        let fractionInBinary = fraction.toString(2);
+        console.log(integerInBinary + " " + fractionInBinary + " " + rightSideOfInteger);
+
+        //Cut the fraction off so its 23 long
+        fractionInBinary = fractionInBinary.slice(1, 25);
+        let fractionalBinary = fractionInBinary;
+        console.log("fract in bin is : " + fractionInBinary + "of length: " + (fractionInBinary.length - 1));
+
+
+        let completeBinary = integerInBinary + fractionInBinary;
+        console.log("complete bin is : " + completeBinary);
+
+        //Convert back into numbers
+        integerInBinary = parseFloat(integerInBinary);
+        fractionInBinary = parseFloat(fractionInBinary);
+        console.log("The integer binary is: " + integerInBinary + " The fraction binary is: " + fractionInBinary);
+
+        let completeDecimalPoint = (completeBinary.indexOf('.') - 1);
+        console.log("the decimal point jumps away: " + completeDecimalPoint);
+
+        let exponentBinary = 127 + completeDecimalPoint;
+        console.log(exponentBinary);
+        exponentBinary = parseFloat(exponentBinary.toString(2));
+        console.log(exponentBinary);
+
+        fractionInBinary = fractionInBinary.toString();
+        console.log("heuehu" + fractionInBinary);
+        fractionInBinary = fractionalBinary.slice(1);
+
+        console.log("sign bit" + signBit);
+        console.log("exponent" + exponentBinary);
+        console.log("afterexpo" + rightSideOfInteger);
+        console.log("fraction" + fractionInBinary);
+        let ieeRepresentation = signBit + exponentBinary + rightSideOfInteger + fractionInBinary;
+        console.log(ieeRepresentation);
+        document.getElementById("iee754Output").innerText = "IEEE754 Binary Representation of " + userInput + " => " + ieeRepresentation;
+
+
     }
-
-    let userInputString = userInput.toString();
-    console.log("USER ENTERED: " + userInput + " " + userInputString);
-
-    if (!userInputString.includes('.')) {
-        userInput += ".0";
-        userInputString += ".0";
-        console.log("check if '.0 ' = " + userInput + " " + userInputString);
-    }
-
-
-    let decimalPoint = userInputString.indexOf('.');
-    let length = userInputString.length;
-
-    let integer = userInputString.slice(0, decimalPoint);
-    let fraction = userInputString.slice(decimalPoint);
-    console.log("The integer is: " + integer + " The fraction is: " + fraction);
-    fraction = "0" + fraction;
-    let mantissa = fractionToBinary(fraction);
-    integer = parseFloat(integer);
-    fraction = parseFloat(fraction);
-    console.log("The integer is: " + integer + " The fraction is: " + fraction);
-
-    let integerInBinary = integer.toString(2);
-    let rightSideOfInteger = integerInBinary.slice(1);
-    let fractionInBinary = fraction.toString(2);
-    console.log(integerInBinary + " " + fractionInBinary + " " + rightSideOfInteger);
-
-    //Cut the fraction off so its 23 long
-    fractionInBinary = fractionInBinary.slice(1, 25);
-    let fractionalBinary = fractionInBinary;
-    console.log("fract in bin is : " + fractionInBinary + "of length: " + (fractionInBinary.length - 1));
-
-
-    let completeBinary = integerInBinary + fractionInBinary;
-    console.log("complete bin is : " + completeBinary);
-
-    //Convert back into numbers
-    integerInBinary = parseFloat(integerInBinary);
-    fractionInBinary = parseFloat(fractionInBinary);
-    console.log("The integer binary is: " + integerInBinary + " The fraction binary is: " + fractionInBinary);
-
-    let completeDecimalPoint = (completeBinary.indexOf('.') - 1);
-    console.log("the decimal point jumps away: " + completeDecimalPoint);
-
-    let exponentBinary = 127 + completeDecimalPoint;
-    console.log(exponentBinary);
-    exponentBinary = parseFloat(exponentBinary.toString(2));
-    console.log(exponentBinary);
-
-    fractionInBinary = fractionInBinary.toString();
-    console.log("heuehu" + fractionInBinary);
-    fractionInBinary = fractionalBinary.slice(1);
-
-    console.log("sign bit" + signBit);
-    console.log("exponent" + exponentBinary);
-    console.log("afterexpo" + rightSideOfInteger);
-    console.log("fraction" + fractionInBinary);
-    let ieeRepresentation = signBit + exponentBinary + rightSideOfInteger + fractionInBinary;
-    console.log(ieeRepresentation);
-    document.getElementById("iee754Output").innerText = "IEEE754 Binary Representation of " + userInput + " => " + ieeRepresentation;
-
-
 }
 
 function fractionToBinary(fraction) {
