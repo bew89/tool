@@ -1,6 +1,11 @@
 
 body {
-    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    /*background: linear-gradient(to bottom, #2c3e50, #8e44ad);*/
+    background: linear-gradient(to bottom, #000428, #00c6ff);
+
+
+
+    color: white;
     font-family: 'Arial', sans-serif;
     margin: 0;
     padding: 0;
@@ -9,14 +14,13 @@ body {
 
 h1 {
     text-align: center;
-    font-size: 3em;
-    margin-top: 50px;
+    font-size: 30px;
     animation: fadeIn 2s ease-in-out;
 }
 
 nav {
     margin: 20px 0;
-    background: rgba(50, 100, 100, 0.8);
+    /*background: linear-gradient(to bottom, #403535, #877878);*/
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -27,7 +31,7 @@ ul {
     list-style: none;
     padding: 0;
     margin: 0;
-    text-align: left;
+    text-align: center;
 }
 
 li {
@@ -65,7 +69,7 @@ li:nth-child(6) {
 a {
     position: relative;
     text-decoration: none;
-    color: rgba(150, 200, 200);
+    color: white;
     font-size: 1.2em;
     transition: color 0.3s ease;
 }
