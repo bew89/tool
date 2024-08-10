@@ -46,12 +46,14 @@ h1 {
     .grid-container {
         background: linear-gradient(to bottom, #000428, #00c6ff);
         display: grid;
-        grid-template-columns: 1fr;
-        grid-template-rows: 1fr 1fr;
+        grid-template-columns: auto;
+        grid-template-rows: auto;
         grid-template-areas:
         'h1'
-	'arithmetics'
-    'roots';
+	    'arithmetics'
+        'roots';
+        min-height: 100svmin;
+        min-width: 100svmin;
     }
 
     #arithmetic {
