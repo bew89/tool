@@ -1,11 +1,17 @@
 
 .grid-container {
-    background-color: #556B2F;
+    background: linear-gradient(to bottom, #000428, #00c6ff);
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-template-areas:
+    'h1 h1'
 	'arithmetics roots'
     'arithmetics roots';
+}
+
+h1 {
+    grid-area: h1;
+    text-align: center;
 }
 
 #arithmetic {
@@ -55,10 +61,11 @@
         width: 100px;
         height: 20px;
     }
+
     .arithmeticButtons {
         width: 90px;
         height: 25px;
-border-radius: 7px;
+        border-radius: 7px;
     }
 }
 
@@ -67,7 +74,7 @@ body, h1 {
 }
 
 body {
-    background-color: saddlebrown;
+    background: linear-gradient(to bottom, #000428, #00c6ff);
     font-size: 25px;
     font-family: 'Consolas', monospace;
 }
