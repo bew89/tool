@@ -7,6 +7,9 @@
     'h1 h1'
 	'arithmetics roots'
     'arithmetics roots';
+    min-height: 100vh;
+    min-width: 100vh;
+
 }
 
 h1 {
@@ -34,17 +37,19 @@ h1 {
 
 .arithmeticButtons {
     width: 100px;
+    margin: 5px;
     height: 35px;
 
 }
 
 @media screen and (max-width: 600px) {
     .grid-container {
-        background-color: #556B2F;
+        background: linear-gradient(to bottom, #000428, #00c6ff);
         display: grid;
         grid-template-columns: 1fr;
         grid-template-rows: 1fr 1fr;
         grid-template-areas:
+        'h1'
 	'arithmetics'
     'roots';
     }
@@ -74,7 +79,7 @@ body, h1 {
 }
 
 body {
-    background: linear-gradient(to bottom, #000428, #00c6ff);
+    /*background: linear-gradient(to bottom, #000428, #00c6ff);*/
     font-size: 25px;
     font-family: 'Consolas', monospace;
 }
