@@ -29,10 +29,29 @@ function setToZero() {
     0000`;
 }
 
+function tooLongError() {
+    document.getElementById("defaultBinaryOutput").innerText = `Number is too long
+    
+    Standard Binary Representation:
+    0000`;
+    document.getElementById("signedBinaryOutput").innerText = `Signed Binary Representation: 
+	0000`;
+    document.getElementById("onesCompBinaryOutput").innerText = `Ones Complement Binary Representation:
+    0000`;
+    document.getElementById("twosCompBinaryOutput").innerText = `Twos Complement Binary Representation:
+    0000`;
+}
+
 let binary = "";
 
 function defaultToBinary() {
-    let userText = parseFloat(document.getElementById("decimalText").value);
+    let userTextString = document.getElementById("decimalText").value;
+
+    if (userTextString.length > 15) {
+        tooLongError()
+        return
+    }
+    let userText = parseFloat(userTextString)
 
     if (isNaN(userText)) {
         return alert("Enter a number. Text will not work");
@@ -179,10 +198,15 @@ document.getElementById('ieeeText').addEventListener('input', function (ev) {
 });
 
 function IEEEConverter() {
-
-    let userInput = parseFloat(document.getElementById("ieeeText").value);
-
+    let userInputString = document.getElementById("ieeeText").value;
+    //Check for excessive length
+    console.log(userInputString.toString().length)
+    if (userInputString.length > 15) {
+        document.getElementById("iee754Output").innerText = `Number is too long`;
+        return
+    }
     //Check if a number
+    let userInput = parseFloat(userInputString)
     if (isNaN(userInput)) {
         document.getElementById("iee754Output").innerText = `Enter a number
         Text will not work`;
@@ -197,11 +221,12 @@ function IEEEConverter() {
         }
         //Convert the users number into binary representation
         let binaryUserInput = userInput.toString(2);
-
+        console.log("user input " + binaryUserInput)
         let numberOfJumps = binaryUserInput.indexOf('.') - 1
         console.log("num of jumps " + numberOfJumps);
         //Remove decimal point and add it so that it is "1."
         binaryUserInput = binaryUserInput.replace('.', '');
+        console.log("new binary " + binaryUserInput)
         let newBinaryInput = "";
         for (let i = 0; i < binaryUserInput.length; i++) {
             if (i === 1) {
@@ -209,16 +234,21 @@ function IEEEConverter() {
             }
             newBinaryInput += binaryUserInput[i]
         }
-        console.log(newBinaryInput)
+        console.log("new binary inout again " + newBinaryInput)
 
         //add the number of jumps to 127 and then convert tot binary to get the exponent
         let bias = 127
         let exponent = bias + numberOfJumps;
+        console.log("exponent " + exponent)
         exponent = exponent.toString(2);
+        if (exponent.length < 8) {
+            exponent = exponent.padStart(8, "0");
+        }
+        console.log("new expo " + exponent)
 
         let mantissa = "";
         for (let j = 0; j < newBinaryInput.length; j++) {
-            if (j === 0 || j === 1){
+            if (j === 0 || j === 1) {
                 continue
             }
             mantissa += newBinaryInput[j]
@@ -232,11 +262,9 @@ function IEEEConverter() {
         document.getElementById("iee754Output").innerText = "IEEE754 Binary Representation of " + userInput + " => " + finalString;
 
 
-
-
-
     }
 }
+
 //
 //         let userInputString = userInput.toString();
 //         console.log("USER ENTERED: " + userInput + " " + userInputString);
