@@ -65,7 +65,7 @@ function defaultToBinary() {
     binary = binary.toString()
     binary += binaryText;
     document.getElementById("defaultBinaryOutput").innerText = `Standard Binary Representation:
-     ${binary}`;
+     ${binary.toString()}`;
 }
 
 //-----------------------------------------------------------------------------------
@@ -82,7 +82,7 @@ function signedToBinary() {
         signedBinary = '0' + signed;
     }
     document.getElementById("signedBinaryOutput").innerText = `Signed Binary Representation:
-     ${signedBinary}`;
+     ${signedBinary.toString()}`;
 }
 
 //-----------------------------------------------------------------------------------
@@ -109,7 +109,7 @@ function onesCompToBinary() {
     }
 
     document.getElementById("onesCompBinaryOutput").innerText = `Ones Complement Binary Representation:
-     ${onesComplement}`;
+     ${onesComplement.toString()}`;
 
 
 }
@@ -140,7 +140,7 @@ function twosCompToBinary() {
         twosComplement = binary;
     }
     document.getElementById("twosCompBinaryOutput").innerText = `Twos Complement Binary Representation:
-    ${twosComplement}`;
+    ${twosComplement.toString()}`;
 
 
 }
@@ -151,29 +151,25 @@ document.getElementById('binaryText').addEventListener('input', function (ev) {
     binaryToDecimal()
 
 });
-
 function binaryToDecimal() {
-
-    let userInput = parseFloat(document.getElementById("binaryText").value);
+    let userInputString = document.getElementById("binaryText").value;
+    let userInput = parseFloat(userInputString);
 
     if (isNaN(userInput)) {
         document.getElementById("defaultDecimalOutput").innerText = `Enter a number.
          Text will not work`;
-
+    }else if (userInputString.length > 15){
+        document.getElementById("defaultDecimalOutput").innerText = `Binary number is too long.`
     } else {
         document.getElementById("defaultDecimalOutput").innerText = parseInt(userInput, 2);
     }
 }
-
-//-----------------------------------------------------------------------------------
-
 
 function getPadding(binaryText) {
     binaryText = binaryText.toString();
     console.log("binaryText is of value " + binaryText);
     console.log("The length of binaryText is " + binaryText.length);
     if (binaryText.length <= 4) {
-
         return 4;
     } else if (binaryText.length <= 8) {
         return 8;
